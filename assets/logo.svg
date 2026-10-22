@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Gruvbox Shadows & Gradients -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#32302f"/>
+      <stop offset="100%" stop-color="#1d2021"/>
+    </radialGradient>
+    <linearGradient id="mugGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fe8019"/>
+      <stop offset="100%" stop-color="#d65d0e"/>
+    </linearGradient>
+    <linearGradient id="cocoaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3c3836"/>
+      <stop offset="100%" stop-color="#282828"/>
+    </linearGradient>
+    <linearGradient id="cookieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fabd2f"/>
+      <stop offset="100%" stop-color="#d79921"/>
+    </linearGradient>
+    <filter id="cozyShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="100" fill="url(#bgGlow)"/>
+  <rect width="512" height="512" rx="100" fill="none" stroke="#504945" stroke-width="6"/>
+
+  <!-- Table/Napkin Surface Shadow -->
+  <ellipse cx="256" cy="420" rx="190" ry="24" fill="#141617" opacity="0.6"/>
+
+  <!-- Steam rising from Cocoa -->
+  <g stroke="#ebdbb2" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.35">
+    <path d="M 190 190 Q 180 145 200 115 T 190 70">
+      <animate attributeName="d" dur="4s" repeatCount="indefinite"
+        values="M 190 190 Q 180 145 200 115 T 190 70;
+                M 190 190 Q 200 145 180 115 T 195 70;
+                M 190 190 Q 180 145 200 115 T 190 70"/>
+    </path>
+    <path d="M 235 185 Q 245 135 225 100 T 240 55">
+      <animate attributeName="d" dur="3.5s" repeatCount="indefinite"
+        values="M 235 185 Q 245 135 225 100 T 240 55;
+                M 235 185 Q 225 135 245 100 T 230 55;
+                M 235 185 Q 245 135 225 100 T 240 55"/>
+    </path>
+    <path d="M 280 190 Q 270 145 290 115 T 280 70">
+      <animate attributeName="d" dur="4.2s" repeatCount="indefinite"
+        values="M 280 190 Q 270 145 290 115 T 280 70;
+                M 280 190 Q 290 145 270 115 T 285 70;
+                M 280 190 Q 270 145 290 115 T 280 70"/>
+    </path>
+  </g>
+
+  <!-- MUG HANDLE -->
+  <path d="M 320 250 C 390 250 390 350 320 350" 
+        fill="none" stroke="url(#mugGrad)" stroke-width="26" stroke-linecap="round" filter="url(#cozyShadow)"/>
+
+  <!-- MUG BODY -->
+  <g filter="url(#cozyShadow)">
+    <!-- Main Cup Body -->
+    <path d="M 150 220 
+             L 165 375 
+             C 168 405 302 405 305 375 
+             L 320 220 Z" 
+          fill="url(#mugGrad)" />
+    <!-- Mug Bottom Curve Highlight -->
+    <path d="M 167 375 C 185 402 285 402 303 375" fill="none" stroke="#fe8019" stroke-width="4" opacity="0.6"/>
+
+    <!-- Cocoa Liquid Surface -->
+    <ellipse cx="235" cy="220" rx="85" ry="24" fill="url(#cocoaGrad)" stroke="#fe8019" stroke-width="7"/>
+  </g>
+
+  <!-- GIT COMMIT MARSHMALLOWS & BRANCHES (Inside the Cocoa) -->
+  <g>
+    <!-- Branch connecting lines -->
+    <path d="M 195 225 Q 235 212 275 220" fill="none" stroke="#fabd2f" stroke-width="4" stroke-dasharray="2,2"/>
+    <path d="M 195 225 Q 220 232 245 228" fill="none" stroke="#fabd2f" stroke-width="3"/>
+
+    <!-- Marshmallow 1 (Commit A) -->
+    <rect x="180" y="214" width="26" height="20" rx="8" fill="#ebdbb2" stroke="#d5c4a1" stroke-width="2.5" filter="url(#cozyShadow)"/>
+    <circle cx="193" cy="224" r="3.5" fill="#d65d0e"/>
+
+    <!-- Marshmallow 2 (Commit B - main) -->
+    <rect x="262" y="210" width="26" height="20" rx="8" fill="#ebdbb2" stroke="#d5c4a1" stroke-width="2.5" filter="url(#cozyShadow)"/>
+    <circle cx="275" cy="220" r="3.5" fill="#fe8019"/>
+
+    <!-- Marshmallow 3 (Commit C - branch) -->
+    <rect x="232" y="218" width="24" height="19" rx="8" fill="#fbf1c7" stroke="#d5c4a1" stroke-width="2.5" filter="url(#cozyShadow)"/>
+    <circle cx="244" cy="227.5" r="3" fill="#b8bb26"/>
+  </g>
+
+  <!-- Heart/Logo on Mug -->
+  <g transform="translate(235, 305) scale(0.9)">
+    <path d="M 0 -15 C -25 -45 -55 -15 0 35 C 55 -15 25 -45 0 -15 Z" fill="#ebdbb2" opacity="0.9"/>
+    <!-- Git branch symbol inside heart -->
+    <circle cx="-10" cy="0" r="4.5" fill="#d65d0e"/>
+    <circle cx="10" cy="-8" r="4.5" fill="#d65d0e"/>
+    <circle cx="10" cy="12" r="4.5" fill="#d65d0e"/>
+    <path d="M -10 0 L 10 -8 M -10 0 L 10 12" stroke="#d65d0e" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- COOKIE & CRUMBS NEXT TO MUG -->
+  <g filter="url(#cozyShadow)">
+    <!-- Chocolate Chip Cookie -->
+    <circle cx="365" cy="385" r="45" fill="url(#cookieGrad)" stroke="#b57614" stroke-width="3.5"/>
+    <!-- Cookie texture and chocolate chips -->
+    <circle cx="350" cy="365" r="7" fill="#3c3836"/>
+    <circle cx="380" cy="370" r="6" fill="#3c3836"/>
+    <circle cx="355" cy="395" r="8" fill="#3c3836"/>
+    <circle cx="385" cy="400" r="6.5" fill="#3c3836"/>
+    <circle cx="370" cy="382" r="5" fill="#282828"/>
+
+    <!-- Small Crumbs -->
+    <circle cx="420" cy="410" r="4" fill="#fabd2f"/>
+    <circle cx="428" cy="416" r="2.5" fill="#d79921"/>
+    <circle cx="320" cy="415" r="3.5" fill="#fabd2f"/>
+    <circle cx="312" cy="418" r="2" fill="#d79921"/>
+  </g>
+
+  <!-- Brand Label Text -->
+  <text x="256" y="475" 
+        font-family="'JetBrainsMono Nerd Font', 'Fira Code', monospace" 
+        font-size="28" 
+        font-weight="bold" 
+        fill="#ebdbb2" 
+        text-anchor="middle" 
+        letter-spacing="2">
+    Cozy<tspan fill="#fe8019">Git</tspan>
+  </text>
+</svg>
